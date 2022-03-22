@@ -1,19 +1,28 @@
-import getData from "./getData";
-import loading from '@images/loading.gif';
-import Template from '@templates/Template';
+// const API = 'https://randomuser.me/api/?gender=female';
+const API = 'https://randomuser.me/api/?results=500';
 
-const API = process.env.API;
+const getData = async (id) => {
+  const apiURl = id ? `${API}${id}` : API;
+  try {
+    const response = await fetch(apiURl);
+    const data = await response.json();
+    // console.log(data)
+    // console.log(data.results[0])
 
-const showData = () => {
-  getData(API)
-  .then((data) => {
-    const request = data.results[0];
-    console.log(request)
-    loading.src = request.picture.large;
+    let users = '';
+    data.results.forEach(user => {
+      // console.log(user.name);
+      users += 
+      `
+        <img class="" src="${user.picture.large}" alt="">
+      `;
+      document.getElementById('bg').innerHTML = users;
+    })
 
-    Template();
-  })
-  .catch(err => console.log(err))
-}
+    return users;
+  } catch (error) {
+    console.log('Fetch Error', error);
+  };
+};
 
-export default showData;
+export default getData;

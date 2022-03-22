@@ -16,15 +16,14 @@ const Template = async () => {
               xml:space="preserve">
               <circle cx="50" cy="50" r="40" />
             </svg>
+            <img class="overlay_image" src="${data.picture.large}" alt="">
           </div>
           <p class="card_title">Hi, My name is</p>
           <p class="card_value">${data.name.first} ${data.name.last}</p>
         </div>
         <div class="card_userdata">
-          <ul>
-            <li>${data.email}</li>
-            <li>${data.location.country}</li>
-          </ul>
+          <span>${data.email}</span>
+          <span>${data.location.country}</span>
         </div>
         <div class="card_social">
           <a href="#">
@@ -37,6 +36,7 @@ const Template = async () => {
             <img src="${instagram}" />
           </a>
         </div>
+        <img class="overlay_image" src="${data.picture.large}" alt="">
       </div>
     </div>
   `;
