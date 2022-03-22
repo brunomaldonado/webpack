@@ -3,7 +3,7 @@
 <img src="./src/assets/images/xdr.png" alt="">
 </p>
 
-# Webpack deploy
+## Webpack deploy
 
 Webpack fundamentals example with test build project [https://brunomaldonado.netlify.app/](https://brunomaldonado.netlify.app/)
 
@@ -20,7 +20,7 @@ install all dependencies
 
 | Command     | Description      |
 | :------------ | :------------ |
-| `npm install webpack-cli -D`        | Basic webpack dependencies         |
+| `npm install webpack webpack-cli -D`        | Basic webpack dependencies         |
 | `npm install babel-loader @babel/core`         | Work babel with webpack. Ensure javascript compatibility between browsers.          |
 | `npm install @babel/preset-env`         | Use the latest ecmascript features          |
 | `npm install @babel/plugin-transform-runtime`         | Work with async functions. async await and fetch          |
